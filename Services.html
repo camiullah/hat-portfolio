@@ -280,6 +280,69 @@ canvas {
 }
 
 
+/* ================= */
+
+
+.container {
+            /* max-width: 1200px; */
+            margin-top: 90px;
+            padding: 100px;
+        }
+
+        /* h1 {
+            text-align: center;
+            color: #0073e6;
+        } */
+
+        .services-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #0073e6;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .services-section {
+                grid-template-columns: 1fr;
+            }
+            .container{
+                padding: 20px;
+            }
+        }
+
+/* ========================= */
 /* ---------------------------About----------------------- */
 
 .about {
@@ -521,7 +584,7 @@ canvas {
           </div>
     </header>
 
-    <section id="home" class="home">
+    <!-- <section id="home" class="home">
 
         <div class="home-content" data-scroll data-scroll-speed="-5" >
             <h3 class="mu">Hello, It's me</h3>
@@ -567,7 +630,59 @@ canvas {
             </div>
         </div>
 
-    </section>
+    </section> -->
+
+
+    <div class="container">
+        <h1>One Shop Stop Services</h1>
+
+        <div id="services-container" class="services-section">
+            <!-- Service 1 -->
+            <div class="service-item">
+                <img src="placeholder1.jpg" alt="Digital Tools & Paid Subscriptions">
+                <h3>All Digital Tools & Paid Subscriptions</h3>
+                <p>Get access to essential digital tools and premium subscriptions to enhance your productivity and entertainment experience.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item">
+                <img src="placeholder2.jpg" alt="UK & USA SIMs">
+                <h3>UK & USA SIMs</h3>
+                <p>Stay connected wherever you go with our reliable UK and USA SIM card solutions.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-item">
+                <img src="placeholder3.jpg" alt="Streaming Services">
+                <h3>Streaming Services</h3>
+                <p>Stream your favorite shows and movies with our wide range of streaming platform subscriptions.</p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-item">
+                <img src="placeholder4.jpg" alt="VPN Services">
+                <h3>VPN Services</h3>
+                <p>Browse securely with our premium VPN services, including ExpressVPN, NordVPN, and more.</p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-item">
+                <img src="placeholder5.jpg" alt="Monetization Services">
+                <h3>Monetization Services</h3>
+                <p>Unlock monetization opportunities on platforms like TikTok and YouTube with our expert services.</p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-item">
+                <img src="placeholder6.jpg" alt="IPTV Servers">
+                <h3>IPTV Servers</h3>
+                <p>Access premium IPTV servers such as Rolex TV, Bos TV, and many more for seamless entertainment.</p>
+            </div>
+
+            <script src="./script.js"></script>
+            
+        </div>
+    </div>
 
 </body> 
 </html> 
