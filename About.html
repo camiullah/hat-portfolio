@@ -1,272 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hari | Cyber</title>
 
-    <link rel="icon" type="png|image" href="./sailogo.png">
+    <link rel="icon" type="image/png" href="./sailogo.png">
     <link rel="stylesheet" href="/CSS/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: black;
-    color: rgb(255, 255, 255);
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 10%;
-    background: transparent;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.548), green, rgba(0, 0, 0, 0.548));
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    /* border-radius: 100px; */
-}
-
-.navbar{
-        display: block;
-    }
-.responsive-navbar{
-        display: none;
+        .btn-box {
+        display: inline-block;
+        padding: 12px 28px;
+        background: green;
+        border-radius: 40px;
+        font-size: 16px;
+        color: black;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        animation: zoomIn 1s ease forwards;
+        animation-delay: 0.4s;
     }
 
-.logo {
-    font-size: 25px;
-    color: green;
-    text-shadow: 5px 5px 10px black;
-    text-decoration: none;
-    font-weight: 600;
-    pointer-events: none;
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    
-}
+    .btn-box:hover {
+        box-shadow: 0 0 5px green,
+        0 0 25px green, 0 0 50px green,
+        0 0 100px green, 0 0 200px green;
+    }
 
-.navbar a {
-    display: inline-block;
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    opacity: 0;
-    animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-}
-.navbar a::after {
-    content: '';
-    width: 0;
-    height: 2px;
-    background: black;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    transition: 0.6s;
-}
+          .home .text-container {
+            width: 50%;
+            padding: 20px;
+            text-align: left;
+        }
 
-.navbar a:hover::after {
-    width: 100%;
-}
+        .home .text-container p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.navbar a:hover {
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 0, 0));
-    -webkit-text-fill-color: transparent;
-    background-clip: border-box;
-    -webkit-background-clip: text;
-}
+        body {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
 
-.home {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px 10% 0;
-}
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 10%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), green, rgba(0, 0, 0, 0.7));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
 
-.home-content {
-    /* max-width: 600px; */
-    /* padding: 50px; */
-    /* margin-left: -30px; */
-}
+        .header .logo img {
+            width: 100px;
+        }
 
-.home-content h1 {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.2;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: .7s;
-}   
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
 
-.home-content h3 {
-    font-size: 32px;
-    font-weight: 700;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
-}
+        .navbar a {
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
 
-.mu {
-    margin-top: 50px;
-}
+        .navbar a:hover {
+            color: green;
+            text-shadow: 0 0 5px green;
+        }
 
-.home-content h1, h3 {
-    text-shadow: 5px 4px 10px green;
-}
+        /* Responsive Navbar */
+        .responsive-navbar {
+            display: none;
+        }
 
-.home-content h3 span {
-    color: rgb(0, 255, 0);
-}
+        @media screen and (max-width: 800px) {
+            .navbar {
+                display: none;
+            }
 
-.home-content p {
-    font-size: 16px;
-    margin: 20px 0 0;
-    /* text-align: left; */
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1.3s;
-}
+            .responsive-navbar {
+                display: block;
+            }
+        }
 
-.home-sci a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: black;
-    border: 2px solid green;
-    border-radius: 50%;
-    font-size: 20px;
-    color: green;
-    text-decoration: none;
-    margin: 30px 15px 30px 0;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards;
-    animation-delay: 0.4s;
-    
-}
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 101;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: width 0.5s;
+        }
 
-.home-sci a:hover {
-    background: green;
-    color: black;
-    box-shadow: 0 0 20px green;
-}
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+        }
 
-.btn-box {
-    display: inline-block;
-    padding: 12px 28px;
-    background: green;
-    border-radius: 40px;
-    font-size: 16px;
-    color: black;
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-weight: 600;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards;
-    animation-delay: 0.4s;
-}
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: white;
+            display: block;
+            transition: color 0.3s;
+        }
 
-.btn-box:hover {
-    box-shadow: 0 0 5px green,
-    0 0 25px green, 0 0 50px green,
-    0 0 100px green, 0 0 200px green;
-}
+        .overlay a:hover {
+            color: green;
+        }
 
-.home-img {
-    width: 410px;
-    height: 410px;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-    animation-delay: 2.1s, 3.1s;
-}
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            cursor: pointer;
+        }
 
-.home-img .glowing-circle {
-    width: 100%;
-    height: 100%;
-   
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        /* Home Section */
+        .home {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-.home-img .glowing-circle::after {
-    content: '';
-    position: absolute;
-    width: 380px;
-    height: 380px;
-    background-color:black;
-    border-radius: 50%;
-}
-
-.glowing-circle span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(black, rgba(0, 128, 0, 0.411));
-    border-radius: 50%;
-    animation: circleRotate 5s linear infinite;
-}
-
-.glowing-circle span:nth-child(1) {
-    filter: blur(10px);
-}
-
-.image img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    max-width: 350px;
-    object-fit: cover;
-}
-
-.glowing-circle .image {
-    position: relative;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.navbar-1 a {
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 50px;
-    text-align-last: center;
-}
-
-.navbar-1 a.active, 
-.navbar-1 a:hover {
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 0, 0));
-    -webkit-text-fill-color: transparent;
-    background-clip: border-box;
-    -webkit-background-clip: text;
-}
-
-canvas {
+        .home .image-container {
+            width: 50%;
+            height: 100%;
+            background: url('./images.jpg') no-repeat center center/cover;
+        }
+        canvas {
     position: fixed;
     top: auto;
     left: auto;
@@ -278,294 +175,109 @@ canvas {
     scroll-behavior: smooth;
     height: 100vh;
 }
+      
 
+        /* Footer Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-/* ---------------------------About----------------------- */
-
-.about {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px 10% 0;
-    margin-top: 10% ;
-}
-    
-.about-img img{
-    padding: auto;
-}
-
-.about-content h3{
-    font-size: 32px;
-    font-weight: 700;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
-}
-
-.about-content p{
-    font-size: 16px;
-    margin: 20px 0 0;
-    text-align: left;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1.3s;
-}
-
-/* Animation */
-@keyframes slideTop {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }    
-}
-
-@keyframes slideRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }    
-}
-
-@keyframes slideLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }    
-}
-
-@keyframes zoomIn {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes floatImage {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-24px);
-    }
-
-    100%{
-        transform: translate(0);
-    }
-}
-
-@keyframes circleRotate {
-    0% {
-        transform: rotate(0);
-    }
-    
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    .navbar{
-        display: none;
-    }
-.responsive-navbar{
-        display: block;
-    }
-    .home-img {
-    display: none;
-    width: 410px;
-    height: 410px;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-    animation-delay: 2.1s, 3.1s;
-    }
-    .home {
-        width: 100%;
-        height: 50vh;
-    }
-    
-    .home-content {
-        max-width: 100vw;
-        margin-top: auto;
-    }  
-  }
-
-  .overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-
-@media screen and (max-height: 500px) {
-    .navbar{
-        display: none;
-    }
-    .responsive-navbar{
-        display: block;
-    }
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-  }
-}
-  
+            to {
+                opacity: 1;
+            }
+        }
     </style>
+    <style>
+        @media screen and (max-width: 500px) {
+            .home {
+                width: 100%;
+            }
 
+            .home .text-container {
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+        }
+
+            .image-container {
+                display: none;
+            }
+
+            .text-container {
+                display: flex;
+                width: 100%;
+                /* Make text occupy full width */
+                height: auto;
+                /* Let the height adjust based on content */
+                text-align: center;
+                /* Center align text for better readability */
+                padding: 20px;
+                /* Add padding for spacing */
+                font-size: 16px;
+                /* Adjust font size */
+                line-height: 1.5;
+                /* Improve line spacing for readability */
+                margin: 0;
+                /* Avoid text being too close to edges */
+            }
+        }
+    </style>
 </head>
+
 <body>
-
-    <canvas id="matrixCanvas"></canvas>
-                                                        <!-- Matrix -->
-    <script src="/JAVASCRIPT/matrix.js"></script>
-    <script>
-        function openNav() {
-          document.getElementById("myNav").style.width = "100%";
-        }
-        
-        function closeNav() {
-          document.getElementById("myNav").style.width = "0%";
-        }
-    </script>
-
     <header class="header">
-        <a href="#" class="logo"><img src="./sailogo.png" alt="" style="width: 50px;"> </a>
-        <!-- {Portfolio} -->
+        <a href="#" class="logo"><img src="./sailogo.png" alt="Logo"></a>
         <nav class="navbar">
-            <a href="./index.html" style="--i:1;" class="active">Home</a>
-            <a href="./About.html" style="--i:2;">About</a>
-            <a href="./Skills.html" style="--i:3;">Skills</a>
-            <a href="./Services.html" style="--i:4;">Services</a>
-            <a href="./Contact.html" style="--i:5;">Contact</a>
+            <a href="./index.html" class="active">Home</a>
+            <a href="./About.html">About</a>
+            <a href="./Skills.html">Skills</a>
+            <a href="./Services.html">Services</a>
+            <a href="./Contact.html">Contact</a>
         </nav>
         <nav class="responsive-navbar">
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
         </nav>
         <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <span class="closebtn" onclick="closeNav()">&times;</span>
             <div class="overlay-content">
-                <a href="./index.html" style="--i:1;" class="active">Home</a>
-                <a href="./About.html" style="--i:2;">About</a>
-                <a href="./Skills.html" style="--i:3;">Skills</a>
-                <a href="./Services.html" style="--i:4;">Services</a>
-                <a href="./Contact.html" style="--i:5;">Contact</a>
+                <a href="./index.html">Home</a>
+                <a href="./About.html">About</a>
+                <a href="./Skills.html">Skills</a>
+                <a href="./Services.html">Services</a>
+                <a href="./Contact.html">Contact</a>
             </div>
-          </div>
+        </div>
     </header>
 
-    <section id="home" class="home">
-
-        <div class="home-content" data-scroll data-scroll-speed="-5" >
-            <h1>Who Am I?</h1>
-            <h3> <span class="pro-text">
-                <script>
-                   var typed = new Typed(".pro-text", {
-                      strings: [
-                        "I specialize in ethical hacking, cybersecurity, and bot development with innovative solutions.",
-                        "My journey began with a passion for exploring the intricate workings of the digital world.",
-                        "I master website banning, password recovery, and SEO with robust cybersecurity practices.",
-                        "I deliver results by adapting to trends and committing to ethical practices and excellence.",
-                        "I empower clients to confidently navigate the digital landscape with tailored solutions.",
-                        "I'm Hari Cyber."
-                      ],
-                      typeSpeed: 100,   
-                      backSpeed: 100,   
-                      backDelay: 1000,  
-                      loop: true        
-                    });
-                </script>
-            </span></h3>
-
-            <div class="home-sci">
-                <a href="/" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
-                <a href="https://wa.me/+923351212875" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                <a href="https://www.instagram.com/harry_cyber_boy1/profilecard/?igsh=MWI1Z3R5b3M1NnE2bg==" target="_blank"><i class='bx bxl-instagram'></i></a>
-                <a href="https://t.me/haricyberboy" target="_blank"><i class='bx bxl-telegram'></i></a>
+    <section class="home">
+        <div class="image-container"></div>
+        <div class="text-container">
+            <div class="para">
+                <p>
+                    I specialize in ethical hacking, cybersecurity, and bot development with innovative solutions. My
+                    journey began with a passion for exploring the intricate workings of the digital world. I master website
+                    banning, password recovery, and SEO with robust cybersecurity practices. I deliver results by adapting
+                    to trends and committing to ethical practices and excellence. I empower clients to confidently navigate
+                    the digital landscape with tailored solutions. I'm Hari Cyber.
+                </p>
                 
+                <a href="https://whatsapp.com/channel/0029VagbEX6CMY0Dh54CQQ3w" class="btn-box">Get in Touch</a>
             </div>
-           <a href="https://wa.me/+923351212875" class="btn-box">Get in Touch</a>
+            
+            
         </div>
-
-        <div class="home-img">
-            <div class="glowing-circle">
-                <span></span>
-                <span></span>
-                <div class="image">
-                    <img src="./saianon.png" alt="">
-                </div>
-            </div>
-        </div>
-
     </section>
 
-</body> 
-</html> 
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+</body>
+
+</html>
